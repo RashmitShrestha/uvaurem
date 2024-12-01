@@ -12,9 +12,9 @@ const StartButton = ({onOoff, timeBtn} ) => {
 {onOoff ? (
 
 
-    <Button variant="danger" onClick={timeBtn}>Stop</Button>
+    <Button style={{ fontSize: "20px" }} variant="danger" onClick={timeBtn}>Stop</Button>
 ) : 
-    <Button variant="success" onClick={timeBtn}>Start</Button>
+    <Button style={{ fontSize: "20px" }} variant="success" onClick={timeBtn}>Start</Button>
 
 
 }

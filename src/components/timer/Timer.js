@@ -40,8 +40,6 @@ const Timer = ({ wrkT, brkT, wOB }) => {
     // start timer after click of button
     useEffect(() => {
 
-
-
         let interval = null;
         let endTi;
         if (tt > 0 && active) {
@@ -67,29 +65,28 @@ const Timer = ({ wrkT, brkT, wOB }) => {
 
         if (!active) {
             setTT(wOBB ? wrkT : brkT);
-        }    }, [ wOBB, wrkT, brkT]);
+        }
+    }, [wOBB, wrkT, brkT]);
 
     remHours = isZero(Math.floor(tt / 3600));
     remMinutes = isZero(Math.floor((tt % 3600) / 60));
     remSeconds = isZero(tt % 60);
 
     return (
-        <div>
-
-
-            {
+        <div className="timeDiv">
+                <div>
+                {
                 // <if work time show Work Time as h1
                 // else if break time show Break Time as h1
                 // else show default as h1
 
-                wOBB ? <h1>Work Time</h1> : <h1>Break Time</h1>
-
-
+                wOBB ? <h1 className="timeStat">WORK TIME</h1> : <h1>BREAK TIME</h1>
             }
-            <h1>
+            <h1 className="timeRem">
                 {remHours}:{remMinutes}:{remSeconds}
             </h1>
             <StartButton onOoff={active} timeBtn={changeBtn} />
+                </div>    
         </div>
     );
 };

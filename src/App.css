@@ -39,3 +39,34 @@
     transform: rotate(360deg);
   }
 }
+
+
+.islands {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #3E3E3E55;
+  padding: 5px;
+  border-radius: 20px;
+  text-shadow: 1px 1px 1px #000;  
+  margin: 10px !important;
+  height : 100%;
+  color:#fcfcfc !important;
+}
+
+
+.timeDiv {
+  display: flex;
+  align-items: center;
+}
+
+
+.timeStat {
+  font-size: 4.8rem;
+  margin: 0 5px;
+}
+
+.timeRem {
+  font-size: 5.5rem;
+  margin: 30 0px;
+}

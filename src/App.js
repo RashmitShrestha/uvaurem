@@ -1,6 +1,8 @@
 import './App.css';
 import Timer from './components/timer/Timer.js';
 import Navb from './components/navbar/Navb.js';
+import TaskList from './components/tasklist/Tasklist.js';
+import{Row, Col, Container} from 'react-bootstrap';
 import { useState, useRef } from 'react';
 
 //react bootstrap form input
@@ -40,7 +42,30 @@ function App() {
           subF : submFunc
           
         }}/>
-        <Timer wrkT={wrkTi} brkT={brkTi} wOB={true} />
+
+
+
+        <Container >
+
+          <Row height="100vh">
+            <Col md={8} className="mx-auto ">
+            <div className="islands">
+            <Timer wrkT={wrkTi} brkT={brkTi} wOB={true} />
+
+            </div>
+
+            </Col>
+
+            <Col md={4} className="mx-auto  font-white">
+            <div className="islands">
+              <h3>Task List</h3>
+              <TaskList />
+
+            </div>
+            </Col>
+
+          </Row>
+        </Container>
         {/* <iframe style={{backgroundColor: "blue", padding: "5px", maxWidth:"1000"}} src="https://open.spotify.com/embed/playlist/4gKYOkQ58e3bnMttLS2p3X?utm_source=generator" width="auto" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> */}
       </section>
     </div>

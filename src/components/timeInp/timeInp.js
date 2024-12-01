@@ -33,10 +33,10 @@ function TimeInp({refs}) {
               <Container>
                 <Row>
                   <Col>
-                    <Form.Control type="number"  placeholder="Enter minutes" ref={refs.wrMin} />
+                    <Form.Control type="number"  placeholder="Enter minutes . . ." ref={refs.wrMin} />
                   </Col>
                   <Col>
-                    <Form.Control type="number"  placeholder="Enter seconds" ref={refs.wrSec} />
+                    <Form.Control type="number"  placeholder="Enter seconds . . ." ref={refs.wrSec} />
                   </Col>
                 </Row>
               </Container>
@@ -47,14 +47,20 @@ function TimeInp({refs}) {
               <Container>
                 <Row>
                   <Col>
-                    <Form.Control type="number"   placeholder="Enter minutes" ref = {refs.brMin} />
+                    <Form.Control type="number"   placeholder="Enter minutes . . ." ref = {refs.brMin} />
                   </Col>
                   <Col>
-                    <Form.Control type="number" placeholder="Enter seconds" ref = {refs.brSec} />
+                    <Form.Control type="number" placeholder="Enter seconds . . ." ref = {refs.brSec} />
                   </Col>
                 </Row>
               </Container>
             </Form.Group>
+
+            <hr />
+
+            
+
+            
             <Button variant="primary" type="submit">
               Submit
             </Button>

@@ -7,7 +7,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // however if theres no description, then theres no clickable icon that makes a modal appear
 
 const TaskList = () => {
-    const [tasks, setTasks] = useState([{ title: 'Task 1', description: 'This is task 1', status: 'unstarted', importance: 1 }, { title: 'Task 2', description: 'This is task 2', status: 'in progress', importance: 2 }, { title: 'Task 3', description: 'This is task 3', status: 'finished', importance: 3 }]);
+    const [tasks, setTasks] = useState([
+        { title: 'Task 1', description: 'This is task 1', status: 'unstarted', importance: 1 },
+        { title: 'Task 2', description: 'This is task 2', status: 'in progress', importance: 2 },
+        { title: 'Task 3', description: 'This is task 3', status: 'finished', importance: 3 }
+
+    ]);
+
     const [newTask, setNewTask] = useState('');
 
     const addTask = () => {
@@ -23,29 +29,31 @@ const TaskList = () => {
     };
 
     return (
-        <ListGroup>
-            {tasks.map((task, index) => (
-                <ListGroup.Item key={index}>
-                    <Row>
-                        <Col>
-                            {task.title}
-                        </Col>
-                        <Col>
-                            {task.description}
-                        </Col>
-                        <Col>
-                            {task.status}
-                        </Col>
-                        <Col>
-                            {task.importance}
-                        </Col>
+        <div style={{ display: 'block', width: "100%", padding: 30 }}>
+            <h2>Task List</h2>
+            <ListGroup>
+                {tasks.map((task, index) => (
+                    <ListGroup.Item key={index}>
+                        <Row>
+                            <Col>
+                                {task.title}
+                            </Col>
+
+                            <Col>
+                                {task.status}
+                            </Col>
+                            <Col>
+                                {task.importance}
+                            </Col>
                         </Row>
-                </ListGroup.Item>
-            ))}
-        </ListGroup>
-        
-      
-        
+                    </ListGroup.Item>
+                ))}
+            </ListGroup>
+        </div>
+
+
+
+
     );
 };
 

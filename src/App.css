@@ -46,11 +46,9 @@
   flex-wrap: wrap;
   justify-content: center;
   background-color: #3E3E3E55;
-  padding: 5px;
   border-radius: 20px;
   text-shadow: 1px 1px 1px #000;  
-  margin: 10px !important;
-  height : 100%;
+  height : 40vh;
   color:#fcfcfc !important;
 }
 

@@ -48,28 +48,27 @@ function App() {
 
         <Container >
 
-          <Row height="100vh" style={{ marginBottom: "10px" }}>
-            <Col md={8} className="mx-auto ">
+          <Row className="d-flex gap-2 mb-2" height="100vh"  >
+            <Col >
               <div className="islands">
                 <Timer wrkT={wrkTi} brkT={brkTi} wOB={true} />
               </div>
             </Col>
 
-            <Col md={4} className="mx-auto  font-white">
+            <Col >
               <div className="islands">
-                <h3>Task List</h3>
                 <TaskList />
               </div>
             </Col>
           </Row>
 
-          <Row>
-            <Col md={7}>
+          <Row className="d-flex gap-2 mb-2">
+            <Col >
               <div className="islands">
                 <Spotify />
               </div>
             </Col>
-            <Col md={5}>
+            <Col md={7}>
               <div className="islands">
                 <h1> Motivation Quotes</h1>
               </div>

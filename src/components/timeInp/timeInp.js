@@ -8,6 +8,8 @@ import Col from 'react-bootstrap/Col';
 
 function TimeInp({ refs }) {
   const [show, setShow] = useState(false);
+  const [currColor, setCurrColor] = useState("#0000ff");
+
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -57,14 +59,14 @@ function TimeInp({ refs }) {
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
-            <Form.Label>Background Color</Form.Label>
+              <Form.Label>Background Color</Form.Label>
 
               <Container>
 
                 <Form.Control
                   type="color"
-                  id="exampleColorInput"
-                  defaultValue="#563d7c"
+                  id="colorInp"
+                  defaultValue={currColor}
                   title="Choose your color"
                 />
               </Container>
@@ -73,7 +75,14 @@ function TimeInp({ refs }) {
 
             <hr />
 
-            <Button variant="primary" type="submit" onClick={() => document.body.style.backgroundColor = document.getElementById("exampleColorInput").value}>
+            <Button variant="primary" type="submit" onClick={() => {
+              setCurrColor(document.getElementById("colorInp").value);
+              document.body.style.backgroundColor = document.getElementById("colorInp").value;
+              Form.Control.defaultValue =  currColor;
+
+            }
+
+            }>
               Submit
             </Button>
           </Form>

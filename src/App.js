@@ -8,7 +8,6 @@ import { useState, useRef } from 'react';
 
 //react bootstrap form input
 
-
 // amount of work and break is in the Navb file, inside another js file linked to, but the id name is BrMin, BrSec, WrMin, WrSec
 // include way to get the inputs from inside the Navb file and pass them to the Timer function in this file
 
@@ -44,12 +43,9 @@ function App() {
 
         }} />
 
-
-
         <Container >
-
           <Row className="d-flex gap-2 mb-2" height="100vh"  >
-            <Col >
+            <Col className="mb-sm-4">
               <div className="islands">
                 <Timer wrkT={wrkTi} brkT={brkTi} wOB={true} />
               </div>
@@ -63,7 +59,7 @@ function App() {
           </Row>
 
           <Row className="d-flex gap-2 mb-2">
-            <Col >
+            <Col className="mb-sm-4">
               <div className="islands">
                 <Spotify />
               </div>
@@ -74,7 +70,6 @@ function App() {
               </div>
             </Col>
           </Row>
-
         </Container>
         {/* <iframe style={{backgroundColor: "blue", padding: "5px", maxWidth:"1000"}} src="https://open.spotify.com/embed/playlist/4gKYOkQ58e3bnMttLS2p3X?utm_source=generator" width="auto" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> */}
       </section>

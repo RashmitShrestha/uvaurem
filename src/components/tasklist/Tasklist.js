@@ -11,7 +11,6 @@ const TaskList = () => {
         { title: 'Task 1', description: 'This is task 1', status: 'unstarted', importance: 1 },
         { title: 'Task 2', description: 'This is task 2', status: 'in progress', importance: 2 },
         { title: 'Task 3', description: 'This is task 3', status: 'finished', importance: 3 }
-
     ]);
 
     const [newTask, setNewTask] = useState('');

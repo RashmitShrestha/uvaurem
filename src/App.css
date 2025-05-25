@@ -69,3 +69,14 @@
   margin: 30 0px;
 }
 
+
+/* tasks */
+
+#taskItem {
+
+  background-color:#000000bd ;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  color: white; 
+  float:left;
+}

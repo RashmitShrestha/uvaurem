@@ -7,7 +7,7 @@ function Navb({refs}) {
   return (
 <Container >   
 {/* width breakpoints */}
-    <Navbar bg="transparent" variant="dark" style={{ padding: { xs: "1rem 1rem", md: "1rem 1rem", lg: "rem 1rem" }, }}>
+    <Navbar bg="transparent" variant="dark" style={{ padding: "30px 0px", }}>
       <Nav className="container-fluid">
         <Nav.Item className="ms-auto" style={{ float: "right" }}>
           <TimeInp refs={{

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ListGroup, Row, Col } from 'react-bootstrap';
+import { ListGroup, Row, Col, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // task item, consists of task title (short string), task description (long string), task status (unstarted ,in progress, finished), and task importance (1-3)
@@ -41,18 +41,15 @@ const TaskList = () => {
                                 </span>
                             </Col>
                             <Col lg={1}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                            <Button>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
                                     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
-                                </svg>                            </Col>
+                                </svg>    </Button>
+                                                       </Col>
                         </Row>
                     </ListGroup.Item>
                 ))}
             </ListGroup>
         </div>
-
-
-
-
     );
 };
 

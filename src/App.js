@@ -32,7 +32,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App" >
       <section>
         <Navb refs={{
           wrMin: wrMin,
@@ -43,7 +43,7 @@ function App() {
 
         }} />
 
-        <Container >
+        <Container style={{ marginBottom: "10px" }} className="mt-3">
           <Row className="d-flex gap-2 mb-2" height="100vh"  >
             <Col className="mb-sm-4">
               <div className="islands">

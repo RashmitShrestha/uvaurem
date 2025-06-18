@@ -111,8 +111,9 @@ A Pomodoro timer or studying tool can be significantly enhanced with features th
 
 These features can help create a comprehensive and user-friendly Pomodoro timer or study tool, boosting productivity while also promoting a balanced, healthy approach to studying.
 
-
-
 MY NOTES:
 1. Eishenowher matrix constructor
    For each task, can have option of choosing one of the 4 squares in the Eishenowher matrix to classify its importance and urgency
+
+2. Change the buttons for cutomization vs the buttons for setting the timer
+      because if user wanted to change aesthetic, without changing the timer, then this change should be made 

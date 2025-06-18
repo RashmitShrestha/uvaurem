@@ -8,12 +8,10 @@ import Col from 'react-bootstrap/Col';
 
 function TimeInp({ refs }) {
   const [show, setShow] = useState(false);
-  const [currColor, setCurrColor] = useState("#0000ff");
-
+  const [currColor, setCurrColor] = useState("#ffffff");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
 
   return (
     <>
@@ -24,10 +22,10 @@ function TimeInp({ refs }) {
       </Button>
 
       <Modal show={show} onHide={handleClose} >
-        <Modal.Header closeButton className="bg-dark font-white">
+        <Modal.Header closeButton className="bg-dark text-white">
           <Modal.Title>Change Time</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="bg-dark">
+        <Modal.Body className="bg-dark text-white">
           <Form onSubmit={refs.subF}>
             <Form.Group >
 

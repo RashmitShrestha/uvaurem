@@ -11,19 +11,19 @@ import { useState, useRef } from 'react';
 // amount of work and break is in the Navb file, inside another js file linked to, but the id name is BrMin, BrSec, WrMin, WrSec
 // include way to get the inputs from inside the Navb file and pass them to the Timer function in this file
 
-
-
 // advanced pomodoro timer 
 // 1500 secs = 25 mins
 // 300 secs = 5 mins
 function App() {
   const [wrkTi, setWrkT] = useState(1500);
   const [brkTi, setBrkT] = useState(300);
+  const [phase, setPhase] = useState(0);
 
   const wrMin = useRef();
   const wrSec = useRef();
   const brMin = useRef();
   const brSec = useRef();
+  const currPhase = useRef(); // 0 is work time, 1 is break time 
 
   const submFunc = (e) => {
     setWrkT(Number((wrMin.current.value * 60) + wrSec.current.value));
@@ -40,19 +40,20 @@ function App() {
           brMin: brMin,
           brSec: brSec,
           subF: submFunc
-
         }} />
 
         <Container style={{ marginBottom: "10px" }} className="mt-3">
           <Row className="d-flex gap-2 mb-2" height="100vh"  >
             <Col className="mb-sm-4">
               <div className="islands">
-                <Timer wrkT={wrkTi} brkT={brkTi} wOB={true} />
+                <Timer wrkT={wrkTi} brkT={brkTi} wOB={currPhase} />
               </div>
             </Col>
 
             <Col >
               <div className="islands">
+                <h1> Task List</h1>
+
                 <TaskList />
               </div>
             </Col>
@@ -71,7 +72,6 @@ function App() {
             </Col>
           </Row>
         </Container>
-        {/* <iframe style={{backgroundColor: "blue", padding: "5px", maxWidth:"1000"}} src="https://open.spotify.com/embed/playlist/4gKYOkQ58e3bnMttLS2p3X?utm_source=generator" width="auto" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> */}
       </section>
     </div>
   );

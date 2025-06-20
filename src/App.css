@@ -5,6 +5,10 @@
   text-align: center;
   padding: 0;
   margin: 0;
+  /* background-image: url("https://images8.alphacoders.com/134/1346191.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
 .App-logo {
@@ -47,12 +51,35 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #3E3E3E55;
+  background-color: #2b2b2ba2;
   border-radius: 20px;
   text-shadow: 1px 1px 1px #000;  
   height : 40vh;
   color:#fcfcfc !important;
+  padding:1rem; 
+  scrollbar-gutter: stable-both-edges;
+  overflow-y: auto;                 
+  overflow-x: hidden;               
 }
+
+.islands::-webkit-scrollbar {
+  width: 10px;
+}
+
+.islands::-webkit-scrollbar-track {
+  background: tramsparent;
+}
+
+.islands::-webkit-scrollbar-thumb {
+  background: #f3f3f3;
+  border-radius: 20px;
+}
+
+.islands::-webkit-scrollbar-thumb:hover {
+  background: #c9c9c9;
+}
+
+
 
 
 .timeDiv {
@@ -76,9 +103,25 @@
 
 #taskItem {
 
-  background-color:#000000bd ;
+  background-color:#0c0c0c55 ;
   border-radius: 30px;
   margin-bottom: 10px;
   color: white; 
   float:left;
+  border: none;
+}
+
+#taskItem:nth-child(even) {
+  background-color: #14141499;
+}
+
+
+
+/* customization */
+#custmBtn {
+
+background-color: #181818be;
+border: none;
+margin: 0;
+
 }

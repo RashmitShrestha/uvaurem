@@ -117,3 +117,6 @@ MY NOTES:
 
 2. Change the buttons for cutomization vs the buttons for setting the timer
       because if user wanted to change aesthetic, without changing the timer, then this change should be made 
+
+3. Add supabase to app for authentication and user-storage
+   link: https://supabase.com/dashboard/project/dvirwvxainrcqiswgmtj

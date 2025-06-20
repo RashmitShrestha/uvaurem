@@ -10,8 +10,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const TaskList = () => {
     const [tasks, setTasks] = useState([
         { title: 'Task 1', description: 'This is task 1', status: 'unstarted', importance: 1, eisen: 0 },
-        { title: 'Task 2', description: 'This is task 2', status: 'in progress', importance: 2, eisen: 3  },
-        { title: 'Task 3', description: 'This is task 3', status: 'finished', importance: 3, eisen: 0  }
+        { title: 'Task 2', description: 'This is task 2', status: 'in progress', importance: 2, eisen: 3 },
+        { title: 'Task 3', description: 'This is task 3', status: 'finished', importance: 3, eisen: 0 },
+        { title: 'Task 4', description: 'This is task 4', status: 'unstarted', importance: 1, eisen: 1 },
+        { title: 'Task 5', description: 'This is task 5', status: 'in progress', importance: 2, eisen: 2 },
+        { title: 'Task 6', description: 'This is task 6', status: 'finished', importance: 3, eisen: 0 },
+        { title: 'Task 7', description: 'This is task 7', status: 'unstarted', importance: 1, eisen: 1 },
+        { title: 'Task 8', description: 'This is task 8', status: 'in progress', importance: 2, eisen: 2 }
+
     ]);
 
     const [newTask, setNewTask] = useState('');
@@ -28,23 +34,24 @@ const TaskList = () => {
         setTasks(updatedTasks);
     };
 
-    return (
+    return ( // add overflow-y: scroll to the div to make it scrollable
         <div style={{ display: 'block', width: "100%", padding: 30 }}>
-            <h2>Task List</h2>
-            <ListGroup>
+            <ListGroup >
                 {tasks.map((task, index) => (
                     <ListGroup.Item key={index} id="taskItem">
-                        <Row id="taskItemRow">
-                            <Col lg={11}>
-                                <span className="text-start">
+                        <Row className="d-flex align-items-center justify-content-center" id="taskItemRow">
+                            <Col xs={11} md={11} lg={11} className="d-flex align-items-center justify-content-between">
+                                <span className="text-start" style={{ float: "left" }}>
                                     {task.title}
                                 </span>
+
                             </Col>
-                            <Col lg={1}>
-                            <Button>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                            <Col xs={1} md={1} lg={1} className="d-flex align-items-center justify-content-end">
+                                <Button style={{ backgroundColor: 'transparent', border: 'none' }}>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
                                     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
-                                </svg>    </Button>
-                                                       </Col>
+                                </svg>
+                                </Button>
+                            </Col>
                         </Row>
                     </ListGroup.Item>
                 ))}

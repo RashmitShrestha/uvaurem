@@ -7,8 +7,8 @@ function Navb({refs}) {
   return (
 <Container >   
 {/* width breakpoints */}
-    <Navbar bg="transparent" variant="dark" style={{ padding: "30px 0px", }}>
-      <Nav className="container-fluid">
+    <Navbar bg="transparent" variant="dark" style={{ padding: "30px 0px" }}>
+      <Nav className="container-fluid" style={{ paddingRight:0 }}>
         <Nav.Item className="ms-auto" style={{ float: "right" }}>
           <TimeInp refs={{
           wrMin: refs.wrMin,

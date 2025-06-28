@@ -51,7 +51,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #2b2b2ba2;
+  background-color: #3636368c;
   border-radius: 20px;
   text-shadow: 1px 1px 1px #000;  
   height : 40vh;
@@ -80,8 +80,6 @@
 }
 
 
-
-
 .timeDiv {
   display: flex;
   align-items: center;
@@ -89,7 +87,7 @@
 
 
 .timeStat {
-  font-size: 4.8rem;
+  font-size: 4.8rem !important;
   margin: 0 5px;
 }
 

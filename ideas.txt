@@ -120,3 +120,34 @@ MY NOTES:
 
 3. Add supabase to app for authentication and user-storage
    link: https://supabase.com/dashboard/project/dvirwvxainrcqiswgmtj
+
+
+MVP Features:
+- main timer
+   - bounds: >= 5 secs
+   - document.title changes to countdown 5 seconds at end of each phase 
+   - "0-1:0-1:0-1" error happens on large times 
+- work and break phase differences
+- task list
+   - eisenhower ranking system
+   - tool tip when hovering to show task name if long 
+- pre-defined music options (make these)
+- website cookies
+   - all cookies will be 200 days before expiration
+   - timer resets every time user logs-in
+
+Future Features
+- authentication
+- more Personalization
+   - main, secondary, teritary colors
+   - amount of shading on islands
+   - background image
+   - music
+   - fonts
+- tracking how many 25 minutes passed during work time (called a unit of Uva): 
+   - track two variables for each user: # of Uvas AND offset <= 25 mins 
+   - (if 30 minutes is worked then itll be 1 Uva and an offset of 5 is added THEN next time 5 minute is worked 0 Uvas and offset becomes 10)
+
+
+Current Errors:
+- at the end of long breaks (around 20 seconds with 30 seconds of work), clicking the button just stops changing phases

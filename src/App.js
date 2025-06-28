@@ -15,20 +15,33 @@ import { useState, useRef } from 'react';
 // 1500 secs = 25 mins
 // 300 secs = 5 mins
 function App() {
-  const [wrkTi, setWrkT] = useState(1500);
-  const [brkTi, setBrkT] = useState(300);
-  const [phase, setPhase] = useState(0);
+  const [wrkTi, setWrkT] = useState(5);
+  const [brkTi, setBrkT] = useState(3);
+  const [phase, setPhase] = useState(1); // 1 is work time, 0 is break time
 
   const wrMin = useRef();
   const wrSec = useRef();
   const brMin = useRef();
   const brSec = useRef();
-  const currPhase = useRef(); // 0 is work time, 1 is break time 
+  const currPhase = useRef(); // 1 is work time, 0 is break time 
+  currPhase.current = phase;
+
 
   const submFunc = (e) => {
-    setWrkT(Number((wrMin.current.value * 60) + wrSec.current.value));
-    setBrkT(Number((brMin.current.value * 60) + brSec.current.value));
-    e.preventDefault();
+    console.log(wrMin.current.value)
+    console.log(brMin.current.value)
+
+    if ((wrMin.current.value === "" && wrSec.current.value === "") || (brMin.current.value === "" && brSec.current.value === "")) {
+      alert("Please fill in all fields");
+      e.preventDefault();
+
+    } else {
+      setWrkT(Number((wrMin.current.value * 60) + wrSec.current.value));
+      setBrkT(Number((brMin.current.value * 60) + brSec.current.value));
+      e.preventDefault();
+    }
+
+
   }
 
   return (
@@ -46,7 +59,7 @@ function App() {
           <Row className="d-flex gap-2 mb-2" height="100vh"  >
             <Col className="mb-sm-4">
               <div className="islands">
-                <Timer wrkT={wrkTi} brkT={brkTi} wOB={currPhase} />
+                <Timer wrkT={wrkTi} brkT={brkTi} wOB={phase} />
               </div>
             </Col>
 

@@ -9,6 +9,10 @@ import Col from 'react-bootstrap/Col';
 function TimeInp({ refs }) {
   const [show, setShow] = useState(false);
   const [currColor, setCurrColor] = useState("#ffffff");
+  const [currWrMin, setWrMin] = useState();
+  const [currWrSec, setWrSec] = useState();
+  const [currBrMin, setBrMin] = useState();
+  const [currBrSec, setBrSec] = useState();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -33,10 +37,10 @@ function TimeInp({ refs }) {
               <Container>
                 <Row>
                   <Col>
-                    <Form.Control type="number" placeholder="Enter minutes . . ." ref={refs.wrMin} />
+                    <Form.Control defaultValue={currWrMin} type="number" placeholder="Enter minutes . . ." ref={refs.wrMin} id="wrMin" />
                   </Col>
                   <Col>
-                    <Form.Control type="number" placeholder="Enter seconds . . ." ref={refs.wrSec} />
+                    <Form.Control defaultValue={currWrSec} type="number" placeholder="Enter seconds . . ." ref={refs.wrSec} id="wrSec" />
                   </Col>
                 </Row>
               </Container>
@@ -47,16 +51,16 @@ function TimeInp({ refs }) {
               <Container>
                 <Row>
                   <Col>
-                    <Form.Control type="number" placeholder="Enter minutes . . ." ref={refs.brMin} />
+                    <Form.Control defaultValue={currBrMin} type="number" placeholder="Enter minutes . . ." ref={refs.brMin} id="brMin" />
                   </Col>
                   <Col>
-                    <Form.Control type="number" placeholder="Enter seconds . . ." ref={refs.brSec} />
+                    <Form.Control defaultValue={currBrSec} type="number" placeholder="Enter seconds . . ." ref={refs.brSec} id="brSec" />
                   </Col>
                 </Row>
               </Container>
             </Form.Group>
 
-            <Form.Group controlId="formBasicPassword">
+            <Form.Group>
               <Form.Label>Background Color</Form.Label>
               <Container>
                 <Form.Control
@@ -70,6 +74,11 @@ function TimeInp({ refs }) {
             <hr />
             <Button variant="primary" type="submit" onClick={() => {
               setCurrColor(document.getElementById("colorInp").value);
+              setWrMin(document.getElementById("wrMin").value);
+              setWrSec(document.getElementById("wrSec").value);
+              setBrMin(document.getElementById("brMin").value);
+              setBrSec(document.getElementById("brSec").value);
+
               document.body.style.backgroundColor = document.getElementById("colorInp").value;
               Form.Control.defaultValue =  currColor;
             }}>

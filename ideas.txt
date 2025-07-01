@@ -126,7 +126,6 @@ MVP Features:
 - main timer
    - bounds: >= 5 secs
    - document.title changes to countdown 5 seconds at end of each phase 
-   - "0-1:0-1:0-1" error happens on large times 
 - work and break phase differences
 - task list
    - eisenhower ranking system
@@ -138,6 +137,8 @@ MVP Features:
 
 Future Features
 - authentication
+- add satisfying asmr-like sounds to website during specific events
+   -  (during starting session have a reverbed click-like water-droping like sound)
 - more Personalization
    - main, secondary, teritary colors
    - amount of shading on islands
@@ -147,6 +148,9 @@ Future Features
 - tracking how many 25 minutes passed during work time (called a unit of Uva): 
    - track two variables for each user: # of Uvas AND offset <= 25 mins 
    - (if 30 minutes is worked then itll be 1 Uva and an offset of 5 is added THEN next time 5 minute is worked 0 Uvas and offset becomes 10)
+- break time components:
+   - create relaxing sounds of natures that can be played
+      - work on sound design
 
 
 Current Errors:

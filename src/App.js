@@ -3,8 +3,11 @@ import Timer from './components/timer/Timer.js';
 import Navb from './components/navbar/Navb.js';
 import TaskList from './components/tasklist/Tasklist.js';
 import Spotify from './components/islands/spotify.js';
+import AddTask from './components/tasklist/AddTask.js';
 import { Row, Col, Container } from 'react-bootstrap';
 import { useState, useRef } from 'react';
+
+import LinkedList from "fast-linked-list"
 
 //react bootstrap form input
 
@@ -15,8 +18,8 @@ import { useState, useRef } from 'react';
 // 1500 secs = 25 mins
 // 300 secs = 5 mins
 function App() {
-  const [wrkTi, setWrkT] = useState(5);
-  const [brkTi, setBrkT] = useState(3);
+  const [wrkTi, setWrkT] = useState(1500);
+  const [brkTi, setBrkT] = useState(300);
   const [phase, setPhase] = useState(1); // 1 is work time, 0 is break time
 
   const wrMin = useRef();
@@ -65,9 +68,25 @@ function App() {
 
             <Col >
               <div className="islands">
-                <h1> Task List</h1>
+                <div style={{
+                  width: "100%",
+                  height: "auto",
+                  background: "#18181855",
+                  top: "0",
+                  zIndex: "1",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "0.5rem 2rem",
+                  position: "sticky",
+                }}>
+                  <h1 style={{ margin: 0, flex: "1", textAlign: "center" }}>Task List</h1>
+                  <AddTask/>
+                </div>
 
-                <TaskList />
+                <div style={{ width: "100%" }}>
+                  <TaskList />
+                </div>
               </div>
             </Col>
           </Row>

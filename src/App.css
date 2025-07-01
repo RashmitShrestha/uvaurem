@@ -41,11 +41,15 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
+h1 {
+  padding-top: 8px;
+}
 
 .islands {
   display: flex;
@@ -53,13 +57,18 @@
   justify-content: center;
   background-color: #3636368c;
   border-radius: 20px;
-  text-shadow: 1px 1px 1px #000;  
-  height : 40vh;
-  color:#fcfcfc !important;
-  padding:1rem; 
+  text-shadow: 1px 1px 1px #000;
+  height: 40vh;
+  color: #fcfcfc !important;
   scrollbar-gutter: stable-both-edges;
-  overflow-y: auto;                 
-  overflow-x: hidden;               
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+Modal {
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(8px);
+
 }
 
 .islands::-webkit-scrollbar {
@@ -71,12 +80,12 @@
 }
 
 .islands::-webkit-scrollbar-thumb {
-  background: #f3f3f3;
+  background: #f3f3f396;
   border-radius: 20px;
 }
 
 .islands::-webkit-scrollbar-thumb:hover {
-  background: #c9c9c9;
+  background: #c9c9c9a1;
 }
 
 
@@ -101,25 +110,45 @@
 
 #taskItem {
 
-  background-color:#0c0c0c55 ;
+  background-color: #0c0c0c55;
   border-radius: 30px;
   margin-bottom: 10px;
-  color: white; 
-  float:left;
+  color: white;
+  float: left;
   border: none;
+  cursor: pointer;
+
 }
 
 #taskItem:nth-child(even) {
   background-color: #14141499;
+  cursor: pointer;
+}
+
+#taskItem:hover {
+  background-color: #1a1a1a;
+}
+
+#taskItem:nth-child(even):hover {
+  background-color: #1a1a1a;
+}
+
+/* customization */
+.btnn {
+
+  background-color: #181818be !important;
+  border: none !important;
+  margin: 0 !important;
+  border-radius: 20px !important;
+}
+
+.btnn:hover {
+  background-color: #000000c4 !important;
 }
 
 
-
-/* customization */
-#custmBtn {
-
-background-color: #181818be;
-border: none;
-margin: 0;
-
+.contt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

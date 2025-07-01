@@ -19,28 +19,28 @@ function TimeInp({ refs }) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} id="custmBtn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-stopwatch-fill" viewBox="0 0 16 16">
-          <path d="M6.5 0a.5.5 0 0 0 0 1H7v1.07A7.001 7.001 0 0 0 8 16a7 7 0 0 0 5.29-11.584l.013-.012.354-.354.353.354a.5.5 0 1 0 .707-.707l-1.414-1.415a.5.5 0 1 0-.707.707l.354.354-.354.354-.012.012A6.97 6.97 0 0 0 9 2.071V1h.5a.5.5 0 0 0 0-1zm2 5.6V9a.5.5 0 0 1-.5.5H4.5a.5.5 0 0 1 0-1h3V5.6a.5.5 0 1 1 1 0" />
+      <Button variant="primary" onClick={handleShow} className="btnn">
+        <svg width="20" height="20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" color="white">
+          <circle cx="50" cy="50" r="40" stroke="white" strokeWidth="10" fill="none" />
         </svg>
       </Button>
 
-      <Modal show={show} onHide={handleClose} >
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton className="bg-dark text-white">
           <Modal.Title>Change Time</Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-dark text-white">
           <Form onSubmit={refs.subF}>
-            
+
             <Form.Group>
               <Form.Label>Work Time</Form.Label>
               <Container>
                 <Row>
                   <Col>
-                    <Form.Control defaultValue={currWrMin} type="number" placeholder="Enter minutes . . ." ref={refs.wrMin} id="wrMin" />
+                    <Form.Control defaultValue={currWrMin ? currWrMin : 25} type="number" placeholder="Enter minutes . . ." ref={refs.wrMin} id="wrMin" />
                   </Col>
                   <Col>
-                    <Form.Control defaultValue={currWrSec} type="number" placeholder="Enter seconds . . ." ref={refs.wrSec} id="wrSec" />
+                    <Form.Control defaultValue={currWrSec ? currWrSec : ""} type="number" placeholder="Enter seconds . . ." ref={refs.wrSec} id="wrSec" />
                   </Col>
                 </Row>
               </Container>
@@ -51,10 +51,10 @@ function TimeInp({ refs }) {
               <Container>
                 <Row>
                   <Col>
-                    <Form.Control defaultValue={currBrMin} type="number" placeholder="Enter minutes . . ." ref={refs.brMin} id="brMin" />
+                    <Form.Control defaultValue={currBrMin ? currBrMin : 5} type="number" placeholder="Enter minutes . . ." ref={refs.brMin} id="brMin" />
                   </Col>
                   <Col>
-                    <Form.Control defaultValue={currBrSec} type="number" placeholder="Enter seconds . . ." ref={refs.brSec} id="brSec" />
+                    <Form.Control defaultValue={currBrSec ? currBrSec : ""} type="number" placeholder="Enter seconds . . ." ref={refs.brSec} id="brSec" />
                   </Col>
                 </Row>
               </Container>
@@ -80,7 +80,7 @@ function TimeInp({ refs }) {
               setBrSec(document.getElementById("brSec").value);
 
               document.body.style.backgroundColor = document.getElementById("colorInp").value;
-              Form.Control.defaultValue =  currColor;
+              Form.Control.defaultValue = currColor;
             }}>
               Submit
             </Button>

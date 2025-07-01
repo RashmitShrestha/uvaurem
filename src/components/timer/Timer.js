@@ -38,6 +38,18 @@ const Timer = ({ wrkT, brkT, wOB }) => {
         setActive(!active);
     };
 
+    // make skip phase button
+    const skipBtn = () => {
+        if (wOBB) {
+            setTT(brkT);
+            setWOBB(false);
+        } else {
+            setTT(wrkT);
+            setWOBB(true);
+        }
+        setActive(false);
+    }
+
     // start timer after click of button
     useEffect(() => {
         let interval = null;
@@ -76,16 +88,12 @@ const Timer = ({ wrkT, brkT, wOB }) => {
         <div className="timeDiv">
             <div>
                 {
-                    // <if work time show Work Time as h1
-                    // else if break time show Break Time as h1
-                    // else show default as h1
-
                     wOBB ? <h1 className="timeStat">WORK TIME</h1> : <h1 className="timeStat">BREAK TIME</h1>
                 }
                 <h1 className="timeRem">
                     {remHours}:{remMinutes}:{remSeconds}
                 </h1>
-                <StartButton onOoff={active} timeBtn={changeBtn} />
+                <StartButton onOoff={active} timeBtn={changeBtn} skipBtn={skipBtn} />
             </div>
         </div>
     );

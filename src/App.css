@@ -64,11 +64,10 @@ h1 {
   overflow-y: auto;
   overflow-x: hidden;
 }
-
-Modal {
-  backdrop-filter: blur(28px) !important;
-  -webkit-backdrop-filter: blur(8px);
-
+#custModal::after {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
 
 .islands::-webkit-scrollbar {
@@ -108,29 +107,29 @@ Modal {
 
 /* tasks */
 
-#taskItem {
+.taskItem {
 
-  background-color: #0c0c0c55;
-  border-radius: 30px;
-  margin-bottom: 10px;
-  color: white;
-  float: left;
-  border: none;
-  cursor: pointer;
+  background-color: #0c0c0c55 !important;
+  border-radius: 30px !important;
+  margin-bottom: 10px !important;
+  color: white !important;
+  float: left !important;
+  border: none !important;
+  cursor: pointer !important;
 
 }
 
-#taskItem:nth-child(even) {
-  background-color: #14141499;
-  cursor: pointer;
+.taskItem:nth-child(even) {
+  background-color: #14141499 !important;
+  cursor: pointer !important;
 }
 
-#taskItem:hover {
-  background-color: #1a1a1a;
+.taskItem:hover {
+  background-color: #1a1a1a !important;
 }
 
-#taskItem:nth-child(even):hover {
-  background-color: #1a1a1a;
+.taskItem:nth-child(even):hover {
+  background-color: #1a1a1a !important;
 }
 
 /* customization */
@@ -151,4 +150,9 @@ Modal {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.svgs {
+
+  
 }

@@ -25,7 +25,7 @@ function TimeInp({ refs }) {
         </svg>
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} id="custModal">
         <Modal.Header closeButton className="bg-dark text-white">
           <Modal.Title>Change Time</Modal.Title>
         </Modal.Header>

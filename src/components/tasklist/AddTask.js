@@ -1,13 +1,11 @@
 import { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// task item, consists of task title (short string), task description (long string), task status (unstarted ,in progress, finished), and task importance (1-3)
-// if a task has a description, then a special icon will be on the task item, and when clicked it opens a modal with the description and more details
-// however if theres no description, then theres no clickable icon that makes a modal appear
+// task item, consists of task title (short string), task notes, task status (unstarted ,in progress, finished), and task importance from eisenhower (1-3)
 
 // eisen = based on eisenhower matrix, 0 is do, 1 is decide, 2 is delegate, and 3 is delete
-const AddTask = () => {
+const AddTask = ({addTask}) => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -38,18 +36,56 @@ const AddTask = () => {
 
 
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Header closeButton className="bg-dark text-white">
+                    <Modal.Title>Add New Task</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={handleClose}>
-                        Save Changes
-                    </Button>
-                </Modal.Footer>
+                <Modal.Body className="bg-dark text-white">
+                    <Form onSubmit={(e) => {
+                        e.preventDefault();
+                        addTask(e.target.title.value, Number(e.target.importance.value), e.target.description.value, Number(e.target.status.value));
+                        e.target.reset(); // reset the form fields
+                        handleClose();
+                    }}>
+
+                        <Form.Group controlId="formTaskTitle">
+                            <Form.Label>Task Title</Form.Label>
+                            <Form.Control type="text" placeholder="Enter task title" name="title" required />
+                        </Form.Group>
+
+                        <Form.Group controlId="formTaskImportance">
+                            <Form.Label>Importance Level</Form.Label>
+                            <Form.Control as="select" name="importance" required>
+                                <option value="0">Low</option>
+                                <option value="1">Medium</option>
+                                <option value="2">High</option>
+                            </Form.Control>
+                        </Form.Group>
+
+                        <Form.Group controlId="formTaskDescription">
+                            <Form.Label>Task Description</Form.Label>
+                            <Form.Control as="textarea" rows={3} placeholder="Enter task description" name="description" />
+                        </Form.Group>
+
+                        <Form.Group controlId="formTaskStatus">
+                            <Form.Label>Task Status</Form.Label>
+                            <Form.Control as="select" name="status" required>
+                                <option value="0">Unstarted</option>
+                                <option value="1">In Progress</option>
+                                <option value="2">Finished</option>
+                            </Form.Control>
+                        </Form.Group>
+
+                        <Button variant="primary" type="submit"
+
+                            style={{
+                                marginTop: "10px",
+                                borderRadius: "10px",
+                                color: "white"
+                            }}>
+                            Add Task
+                        </Button>
+                    </Form>
+                </Modal.Body>
             </Modal>
 
         </>

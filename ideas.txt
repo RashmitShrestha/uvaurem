@@ -151,7 +151,17 @@ Future Features
 - break time components:
    - create relaxing sounds of natures that can be played
       - work on sound design
+- drag and drop for tasks
+   - https://www.nngroup.com/articles/drag-drop/
+- instructions section (how to use this tool)
 
 
 Current Errors:
 - at the end of long breaks (around 20 seconds with 30 seconds of work), clicking the button just stops changing phases
+
+
+The 4 islands
+1. Timer
+2. Tasks 
+3. Feedback
+4. Phases

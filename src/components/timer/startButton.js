@@ -7,17 +7,15 @@ import { Col, Row } from 'react-bootstrap';
 const StartButton = ({ onOoff, timeBtn, skipBtn }) => {
     return (
         <Row>
-
-
             <Col xs={6} md={6} lg={6} className="d-flex align-items-center justify-content-center">
                 {onOoff ? (
-                    <Button style={{ fontSize: "20px", backgroundColor: "#3636368c", color: "white", border: "none" }} onClick={timeBtn}>Stop</Button>
+                    <Button  className='btnn'style={{ fontSize: "20px", backgroundColor: "#3636368c !important", color: "white", border: "none" }} onClick={timeBtn} >Stop</Button>
                 ) :
-                    <Button style={{ fontSize: "20px", backgroundColor: "#6666668c", color: "white", border: "none" }} onClick={timeBtn}>Start</Button>
+                    <Button  className='btnn' style={{ fontSize: "20px", backgroundColor: "#6666668c !important", color: "white", border: "none" }} onClick={timeBtn} >Start</Button>
                 }
             </Col>
             <Col xs={6} md={6} lg={6} className="d-flex align-items-center justify-content-center">
-                <Button style={{ fontSize: "20px", backgroundColor: "#3636368c", color: "white", border: "none" }} onClick={skipBtn}>Skip</Button>
+                <Button style={{ fontSize: "20px", backgroundColor: "#3636368c", color: "white", border: "none" }} onClick={skipBtn}  className='btnn'>Skip</Button>
 
             </Col>
         </Row>

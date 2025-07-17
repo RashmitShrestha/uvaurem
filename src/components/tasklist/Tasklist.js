@@ -56,7 +56,6 @@ const TaskList = ({ tasks, updateTask }) => {
                 <span className="text-start">{task.title}</span>
 
                 <span className="text-start">
-
                     {
                         // importance 0 = low, 1 = medium, 2 = high
                         task.importance === 0 ? (
@@ -67,11 +66,8 @@ const TaskList = ({ tasks, updateTask }) => {
                           <img src={`/3bar.svg`} alt="High Importance" width="20" height="20" />
                         ) : "fucked shit bruh"
                     }
-
-
                 </span>
 
-              
               </Col>
               <Col xs={1} className="d-flex align-items-center justify-content-end">
                 <Button

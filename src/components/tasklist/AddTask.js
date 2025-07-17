@@ -33,7 +33,7 @@ const AddTask = ({addTask}) => {
                     <line x1="5" y1="12" x2="19" y2="12" />
                 </svg>
             </Button>
-
+ 
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton className="bg-dark text-white">

@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState} from 'react';
+import ProgressBar from 'react-bootstrap/ProgressBar';
+
 import StartButton from './startButton';
 
 // totalTime in seconds is passed as a prop
@@ -15,6 +17,8 @@ const Timer = ({ wrkT, brkT, wOB }) => {
     const [wOBB, setWOBB] = useState(wOB);
     const [tt, setTT] = useState(wOBB ? wrkT : brkT);
     const [active, setActive] = useState(false);
+    const totTT = wOBB ? wrkT : brkT;
+    const sounds = (Math.random() < 0.5) ? new Audio('/rhehe.mp3') : new Audio('/blueLock.mp3') ;
 
     const isZero = (ti) => {
         // console.log(ti)
@@ -63,6 +67,7 @@ const Timer = ({ wrkT, brkT, wOB }) => {
         else if (tt <= 0 && active) {
             setTT(wOBB ? wrkT : brkT);
             setWOBB(!wOBB);
+            sounds.play();
             setActive(false);
         }
         else {
@@ -93,7 +98,12 @@ const Timer = ({ wrkT, brkT, wOB }) => {
                 <h1 className="timeRem">
                     {remHours}:{remMinutes}:{remSeconds}
                 </h1>
+
+                                <ProgressBar style={{ height:"10px", backgroundColor:"#f3f3f396", color:"black", '--bs-progress-bar-bg':"#0c0c0c55"}} now={100 - Math.floor(100 * tt/ totTT ) }/>
+
                 <StartButton onOoff={active} timeBtn={changeBtn} skipBtn={skipBtn} />
+
+
             </div>
         </div>
     );

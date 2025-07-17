@@ -2,7 +2,6 @@ import './App.css';
 import Timer from './components/timer/Timer.js';
 import Navb from './components/navbar/Navb.js';
 import TaskList from './components/tasklist/Tasklist.js';
-import Spotify from './components/islands/spotify.js';
 import AddTask from './components/tasklist/AddTask.js';
 import { Row, Col, Container } from 'react-bootstrap';
 import { useState, useRef } from 'react';
@@ -85,7 +84,7 @@ function App() {
                     position: 'sticky',
                   }}
                 >
-                  <h1 style={{ margin: 0, flex: 1, textAlign: 'center' }}>Task List</h1>
+                  <h1 style={{ margin: 0, flex: 1, textAlign: 'center' }}>Tasks</h1>
                   <AddTask addTask={addTaskFunc} />
                 </div>
 
@@ -99,7 +98,6 @@ function App() {
           <Row className="d-flex gap-2 mb-2">
             <Col className="mb-sm-4">
               <div className="islands">
-                <Spotify />
               </div>
             </Col>
             <Col md={7}>

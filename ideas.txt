@@ -145,6 +145,7 @@ Future Features
    - background image
    - music
    - fonts
+- change if you want to countdown or countup the timer
 - tracking how many 25 minutes passed during work time (called a unit of Uva): 
    - track two variables for each user: # of Uvas AND offset <= 25 mins 
    - (if 30 minutes is worked then itll be 1 Uva and an offset of 5 is added THEN next time 5 minute is worked 0 Uvas and offset becomes 10)
@@ -154,6 +155,8 @@ Future Features
 - drag and drop for tasks
    - https://www.nngroup.com/articles/drag-drop/
 - instructions section (how to use this tool)
+- Being able to hide and show certain islands
+   - Or just the progress bar/number countdown
 
 
 Current Errors:
